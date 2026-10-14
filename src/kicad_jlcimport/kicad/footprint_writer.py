@@ -61,7 +61,9 @@ def write_footprint(
     lines.append("    (effects (font (size 1 1) (thickness 0.15)))")
     lines.append("  )")
     if datasheet:
-        lines.append(f'  (property "Datasheet" "{datasheet}" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{_uuid()}")')
+        lines.append(
+            f'  (property "Datasheet" "{_escape(datasheet)}" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{_uuid()}")'
+        )
         lines.append("    (effects (font (size 1 1) (thickness 0.15)))")
         lines.append("  )")
     if description:
@@ -71,7 +73,9 @@ def write_footprint(
         lines.append("    (effects (font (size 1 1) (thickness 0.15)))")
         lines.append("  )")
     if lcsc_id:
-        lines.append(f'  (property "LCSC" "{lcsc_id}" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{_uuid()}")')
+        lines.append(
+            f'  (property "LCSC" "{_escape(lcsc_id)}" (at 0 0 0) (layer "F.Fab") (hide yes) (uuid "{_uuid()}")'
+        )
         lines.append("    (effects (font (size 1 1) (thickness 0.15)))")
         lines.append("  )")
 

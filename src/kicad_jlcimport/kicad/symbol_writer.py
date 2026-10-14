@@ -98,11 +98,11 @@ def write_symbol(
         lines.append(f"      (effects (font (size 1.27 1.27)){hide_suffix})")
         lines.append("    )")
         if footprint_ref:
-            lines.append(f'    (property "Footprint" "{footprint_ref}" (at 0 0 0)')
+            lines.append(f'    (property "Footprint" "{_escape(footprint_ref)}" (at 0 0 0)')
             lines.append("      (effects (font (size 1.27 1.27)) hide)")
             lines.append("    )")
         if datasheet:
-            lines.append(f'    (property "Datasheet" "{datasheet}" (at 0 0 0)')
+            lines.append(f'    (property "Datasheet" "{_escape(datasheet)}" (at 0 0 0)')
             lines.append("      (effects (font (size 1.27 1.27)) hide)")
             lines.append("    )")
         if description:
@@ -114,7 +114,7 @@ def write_symbol(
             lines.append("      (effects (font (size 1.27 1.27)) hide)")
             lines.append("    )")
         if lcsc_id:
-            lines.append(f'    (property "LCSC" "{lcsc_id}" (at 0 0 0)')
+            lines.append(f'    (property "LCSC" "{_escape(lcsc_id)}" (at 0 0 0)')
             lines.append("      (effects (font (size 1.27 1.27)) hide)")
             lines.append("    )")
         if manufacturer:
